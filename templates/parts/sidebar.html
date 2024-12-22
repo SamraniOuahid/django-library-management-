@@ -1,0 +1,127 @@
+ <!-- Main Sidebar Container -->
+ <aside style="position: fixed;" class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <span class="brand-text font-weight-light">NOUVIL</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Abdelrahman Gamal</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                New Books
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Category
+                <i class="fas fa-angle-left right"></i>
+                
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              
+                  <li class="nav-item">
+                    <a id="addcat" href="#" class="nav-link">
+                        <i class="fa fa-plus "></i>
+                        <p  class="text-light"> Add New </p>
+                    </a>
+                  </li> 
+              <form id="cat" method="POST">
+             
+                  <input type="text" class="form-control">
+
+                  <button type="submit" class="btn btn-success">save</button>
+                  <button id="backcat" class="btn btn-primary ">back</button>
+              </form>  
+             
+                  <li style="cursor: pointer;" class="nav-item">
+                    <a id="" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>test 1</p>
+                    </a>
+                  </li>
+ 
+                  <li style="cursor: pointer;" class="nav-item">
+                    <a id="" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>test 2</p>
+                    </a>
+                  </li>
+
+                  <li style="cursor: pointer;" class="nav-item">
+                    <a id="" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>test 3</p>
+                    </a>
+                  </li>
+
+                  <li style="cursor: pointer;" class="nav-item">
+                    <a id="" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>test 4</p>
+                    </a>
+                  </li>
+
+                  <li style="cursor: pointer;" class="nav-item">
+                    <a id="" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>test 5</p>
+                    </a>
+                  </li>
+
+                  <li style="cursor: pointer;" class="nav-item">
+                    <a id="" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>test 6</p>
+                    </a>
+                  </li>
+        
+
+            </ul>
+          </li>
+
+          <li class="nav-header">الكتب المستعارة</li>
+          
+          <li style="cursor: pointer;" class="nav-item">
+            <a id="statusSold" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">تم بيعه</p>
+            </a>
+          </li>
+          <li style="cursor: pointer;" class="nav-item">
+            <a id="" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>تم استعارته</p>
+            </a>
+          </li>
+          <li style="cursor: pointer;" class="nav-item">
+            <a id="" class="nav-link">
+              <i class="nav-icon far fa-circle text-info"></i>
+              <p>متاح</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
