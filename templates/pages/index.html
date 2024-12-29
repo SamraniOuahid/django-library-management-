@@ -113,19 +113,17 @@
           <div class="row justify-content-center mb-3">
             <div class="col-4 ">
               <ul class="nav">
-            
+                
+                {% for c in category|slice:'8' %}
+                <li class="nav-item ">
+                  <a id="" class="nav-link bg-primary" href="#">{{c.name}}</a>
+                </li>
+                {% endfor %}
+                  
                 <li class="nav-item ">
                   <a id="" class="nav-link bg-primary" href="#">تاريخ</a>
                 </li>
-                <li class="nav-item ">
-                  <a id="" class="nav-link bg-primary" href="#">فن</a>
-                </li>
-                <li class="nav-item ">
-                  <a id="" class="nav-link bg-primary" href="#">ثقافة</a>
-                </li>
-                <li class="nav-item ">
-                  <a id="" class="nav-link bg-primary" href="#">رومانسية</a>
-                </li>
+                
               </ul>
             </div>
           </div>
@@ -152,8 +150,12 @@
             <!-- Button trigger modal -->
               </div>
             </div>
-
+            
+            {% if x.photo_book %}
             <div style="background: url({{x.photo_book.url}}); background-size: cover;" class="widget-user-header bg-info">
+              
+            {% endif %}
+              
               <h3 class="widget-user-username">{{x.title }} </h3>
               <h5 class="widget-user-desc">{{x.author}}</h5>
             </div>
@@ -177,8 +179,16 @@
                     <!-- /.col -->
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
+                    
+                    {% if x.price %}
                     <h5 class="description-header">${{x.price}}</h5>
                     <span class="description-text">السعر</span>
+                    {% elif x.rental_price_day %}
+                    <h5 class="description-header">${{x.rental_price_day}}</h5>
+                    <span class="description-text">في اليوم</span>
+                    {% endif %}
+                      
+                    
                   </div>
                   <!-- /.description-block -->
                 </div>
@@ -193,7 +203,16 @@
 
                     {% endif %}
                     <!--  of  -->
-                    <span class="description-text">{{x.status}}</span>
+                   
+                   {% if  x.status == 'available' %}
+                   <span class="description-text text-success">{{x.status}}</span>
+                   {% elif x.status == 'rental' %}
+                   <span class="description-text text-warning">{{x.status}}</span>
+                  {% elif x.status == 'sold' %}
+                  <span class="description-text text-danger">{{x.status}}</span>
+
+                   {% endif %}
+                    
                   </div>
                   <!-- /.description-block -->
                 </div>
