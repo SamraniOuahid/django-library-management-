@@ -10,10 +10,11 @@ class Book(models.Model):
     status_book = [
         ('available', 'available'),
         ('rental','rental' ), 
-        ('sold', 'sold'),
+        ('sold', 'sold'),   
     ]
 
     title = models.CharField(max_length=250)
+    version = models.IntegerField(null=True, blank=True)
     author = models.CharField(max_length=250, null=True, blank= True)
     photo_book = models.ImageField(upload_to='photos', null=True, blank= True)
     photo_author = models.ImageField(upload_to='photos', null=True, blank= True)
