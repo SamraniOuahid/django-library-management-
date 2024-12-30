@@ -89,11 +89,8 @@
             <!-- form start -->
             <form method="POST" enctype="multipart/form-data"  > 
               <div class="card-body"> 
-                <input type="text" class="form-control">
-                <input type="text" class="form-control">
-                <input type="text" class="form-control">
-                <input type="text" class="form-control">
-                <input type="text" class="form-control">
+                {% csrf_token %}
+                {{forms}}
                 <small id='totalrente' class="form-text text-muted"></small>
               </div>
               <!-- /.card-body -->
@@ -145,15 +142,17 @@
                 <span class="sr-only">Toggle Dropdown</span>
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">تعديل</a>
+                <a class="dropdown-item" href="{% url 'update' x.url %}">تعديل</a>
                 <a class="dropdown-item" href="#">حذف</a>
             <!-- Button trigger modal -->
               </div>
             </div>
             
             {% if x.photo_book %}
-            <div style="background: url({{x.photo_book.url}}); background-size: cover;" class="widget-user-header bg-info">
-              
+              <div style="background: url({{x.photo_book.url}}); background-size: cover;" class="widget-user-header bg-info">
+            {% else %}
+            <div  class="widget-user-header bg-info">
+
             {% endif %}
               
               <h3 class="widget-user-username">{{x.title }} </h3>

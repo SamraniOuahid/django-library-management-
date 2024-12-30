@@ -42,15 +42,19 @@
                   <li class="nav-item">
                     <a id="addcat" href="#" class="nav-link">
                         <i class="fa fa-plus "></i>
-                        <p  class="text-light"> Add New </p>
+                        <p   class="text-light"> Add New </p>
                     </a>
                   </li> 
               <form id="cat" method="POST">
-             
-                  <input type="text" class="form-control">
+                <!-- <input type="text"> -->
+                 <div style="display: none;" id="catinput" >
+                    {% csrf_token %}
+                    {{formscat}}
 
-                  <button type="submit" class="btn btn-success">save</button>
-                  <button id="backcat" class="btn btn-primary ">back</button>
+                    <button type="submit" class="btn btn-success">save</button>
+                    <button id="backcat" class="btn btn-primary ">back</button>
+                 </div>
+                
               </form>  
                 
                 {% for cat in category %}

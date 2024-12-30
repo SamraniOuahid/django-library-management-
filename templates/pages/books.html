@@ -38,7 +38,14 @@
                           </ul>
                         </div>
                         <div class="col-5 text-center">
-                            <img style="height: 120px; width: 120px;"  src="{{b.photo_book}}" alt="" class=" img-fluid">
+                          
+                          {% if  b.photo_book %}
+                          <img style="height: 120px; width: 120px; border-radius: 10px;"  src="{{b.photo_book.url}}" alt="" class=" img-fluid">
+                          {% else %}
+                          <img style="height: 120px; width: 120px; border-radius: 10px;"  src="{% static 'dist/img/photo1.png' %}" alt="" class=" img-fluid">
+
+                          {% endif %}
+                            
                           </div>
                       </div>
                     </div>
