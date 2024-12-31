@@ -131,6 +131,7 @@
           
           
           {% for x in book %}
+          
             <!-- الكتب -->
             <div id="" class="col-md-4">
               <!-- Widget: user widget style 1 -->
@@ -142,8 +143,8 @@
                 <span class="sr-only">Toggle Dropdown</span>
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'update' x.url %}">تعديل</a>
-                <a class="dropdown-item" href="#">حذف</a>
+                <a class="dropdown-item" href="{% url 'update' x.id %}">تعديل</a>
+                <a class="dropdown-item" href="{% url 'delete' x.id %}">حذف</a>
             <!-- Button trigger modal -->
               </div>
             </div>

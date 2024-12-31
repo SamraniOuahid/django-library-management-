@@ -12,23 +12,14 @@
       <!-- /.card-header -->
       <!-- form start -->
       <form  method="POST" enctype="multipart/form-data">
-      
+        {% csrf_token %}
         <div class="card-body">
-          
-          <input type="text" class="form-control" placeholder="input text">
-          <input type="text" class="form-control" placeholder="input text">
-          <input type="text" class="form-control" placeholder="input text">
-          <input type="text" class="form-control" placeholder="input text">
-          <input type="text" class="form-control" placeholder="input text">
-          <input type="text" class="form-control" placeholder="input text">
-          <input type="text" class="form-control" placeholder="input text">
-  
-          <small id='totalrente' class="form-text text-muted"></small>
+        {{form}}
         </div>
         <!-- /.card-body -->
   
         <div class="card-footer">
-          <button type="submit" class="btn btn-primary">حفظ</button>
+          <button type="submit" class="btn btn-primary" >حفظ</button>
         </div>
       </form>
     </div>

@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 import json
 from .models import *
 from .forms import BookForm, CategoryForm
 
 # Create your views here.
+# index
 def index(request):
     if request.method == 'POST':
         add_book = BookForm(request.POST, request.FILES)
@@ -20,6 +21,8 @@ def index(request):
         'formscat': CategoryForm(),
     }
     return render(request, 'pages/index.html', context)
+
+# veiw of book
 def books(request):
     if request.method == 'POST':
         add_category = CategoryForm(request.POST, request.FILES)
@@ -32,9 +35,30 @@ def books(request):
     }
     return render(request, 'pages/books.html', context)
 
-def update(request):
-    return render(request, 'pages/update.html')
+# view of update book
+def update(request, id):
+    book_id = Book.objects.get(id = id)
+    if request.method == 'POST':
+        book_save = BookForm(request.POST, request.FILES, instance=book_id)
+        if book_save.is_valid():
+            book_save.save()
+            return redirect('/')
+    else:
+        book_save = BookForm(instance=book_id)
+    context = {
+        'form': book_save,
+    }
+    return render(request, 'pages/update.html', context)
 
+# delete
+def delete(request, id):
+    book_id = get_object_or_404(Book, id = id)
+    if request.method == 'POST':
+        book_id.delete()
+        return redirect('/')
+    return render(request, 'pages/delet.html')
+
+# return format json
 def json(request):
     data = list(Book.objects.values())
     return JsonResponse(data, safe=False)
