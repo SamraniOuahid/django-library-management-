@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   
     <title>Ouahid</title>
     <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
@@ -47,17 +49,32 @@
 <script src="{% static 'dist/js/demo.js' %}"></script>
 <!--<script src="dist/js/pages/dashboard3.js'"></script>
 -->
+
 <script>
 $('#catinput').hide()
-<!-- click to show -->
+
 $('#addcat').click(()=>{
 $('#catinput').show()
-})
+});
 
 $('#backcat').click(()=>{
 $('#catinput').hide()
-})
+});
 </script>
+<script>
+  <!-- {% for book in books %}
+    
+      $('.cat{{book.category.id}}').click(function(){
+        $('.bookhide').hide()
+        $('.book{{book.category.id}}').show()
+      });
+    
+  {% endfor %} -->
+</script>
+  
+  
+
+
 <script>
   $(document).ready(function(){
     $('#myModal').on('shown.bs.modal', function () {

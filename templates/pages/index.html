@@ -111,8 +111,8 @@
             <div class="col-4 ">
               <ul class="nav">
                 
-                {% for c in category|slice:'8' %}
-                <li class="nav-item ">
+                {% for c in category|slice:'4' %}
+                <li class="nav-item cat{{c.id}}">
                   <a id="" class="nav-link bg-primary" href="#">{{c.name}}</a>
                 </li>
                 {% endfor %}
@@ -133,7 +133,7 @@
           {% for x in book %}
           
             <!-- الكتب -->
-            <div id="" class="col-md-4">
+            <div id="" class="col-md-4 bookhide book{{x.category.id}}">
               <!-- Widget: user widget style 1 -->
             <div id="" class="card card-widget widget-user ">
               <!-- Add the bg color to the header using any of the bg-* classes -->
