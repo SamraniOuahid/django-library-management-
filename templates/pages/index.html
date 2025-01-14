@@ -111,9 +111,9 @@
             <div class="col-4 ">
               <ul class="nav">
                 
-                {% for c in category|slice:'4' %}
-                <li class="nav-item cat{{c.id}}">
-                  <a id="" class="nav-link bg-primary" href="#">{{c.name}}</a>
+                {% for cat in category|slice:'4' %}
+                <li class="nav-item cat{{cat.id}}"> 
+                  <a id="" class="nav-link bg-primary" href="#">{{cat.name}}</a>
                 </li>
                 {% endfor %}
                   

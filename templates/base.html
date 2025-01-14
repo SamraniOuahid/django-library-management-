@@ -49,7 +49,15 @@
 <script src="{% static 'dist/js/demo.js' %}"></script>
 <!--<script src="dist/js/pages/dashboard3.js'"></script>
 -->
+{% for book in books %}
+<script>
+$(".cat{{book.category.id}}").click(function(){
+  $(".bookhide").hide()
+  $(".book{{book.category.id}}").show()
 
+})
+</script>
+{% endfor %}
 <script>
 $('#catinput').hide()
 
@@ -60,17 +68,10 @@ $('#catinput').show()
 $('#backcat').click(()=>{
 $('#catinput').hide()
 });
+
+
 </script>
-<script>
-  <!-- {% for book in books %}
-    
-      $('.cat{{book.category.id}}').click(function(){
-        $('.bookhide').hide()
-        $('.book{{book.category.id}}').show()
-      });
-    
-  {% endfor %} -->
-</script>
+
   
   
 
