@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 import json
 from .models import *
+from .models import Book, Category
 from .forms import BookForm, CategoryForm
 
 # Create your views here.
@@ -19,6 +20,11 @@ def index(request):
         'category': Category.objects.all(),
         'forms': BookForm(),
         'formscat': CategoryForm(),
+        'allbooks': Book.objects.filter(active=True).count(),
+        'booksold': Book.objects.filter(status='sold').count(),
+        'bookrental': Book.objects.filter(status='rental').count(),
+        'bookavailable': Book.objects.filter(status='available').count(),
+        # 'booksold': Book.objects.filter(title=='sold').count(),
     }
     return render(request, 'pages/index.html', context)
 

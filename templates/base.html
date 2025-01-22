@@ -59,6 +59,20 @@ $(".cat{{book.category.id}}").click(function(){
 </script>
 {% endfor %}
 <script>
+
+$(document).ready(()=>{
+  var total = 0;
+  $('.totalprice').each(function(){
+    $(this).hide()
+    var salary = $(this).text()
+    total += parseInt(salary);
+})
+  $('#totalsalarys').text('$'+total)
+})
+
+$('#rentalperiod').keyup(function(){
+  $('#totalrental').val($('#rentalperiod').val()*$('#rentalprice').val())
+})
 $('#catinput').hide()
 
 $('#addcat').click(()=>{
@@ -189,7 +203,7 @@ $(function () {
     type: 'pie',
     data: {
       datasets: [{
-        data: ['35','25','40'],
+        data: ['{{bookavailable}}','{{booksold}}','{{bookrental}}'],
         backgroundColor :["#27c100","#f3545d","#fdaf4b"],
         borderWidth: 10,
         

@@ -25,7 +25,7 @@
                 <div class="card-body">
                   <div class="d-flex">
                     <p class="d-flex flex-column">
-                      <span class="text-bold text-lg">500</span>
+                      <span class="text-bold text-lg">{{allbooks}}</span>
                       <span>اجمالي عدد الكتب</span>
                     </p>  
                   </div>
@@ -40,6 +40,26 @@
             </div>
             <!-- /.col-md-6 -->
             
+            {% for book in book %}
+             <!-- <p>{{book.price}}</p> <br> <hr> -->
+            {% if book.price != None %}           
+            {% if book.status == 'sold' %}              
+            <p class="totalprice">{{book.price}}</p>             
+            {% endif %}              
+            {% endif %}             
+            {% if book.total_rental != None %}              
+            {% if book.status == 'rental' %}
+            <p class="totalprice">{{book.total_rental}}</p>
+            {% endif %}                
+            {% endif %}
+              
+
+             
+          
+              
+              
+            {% endfor %}
+              
             <div class="col-lg-6">
               <div class="card">
                 <div class="card-header border-0">
