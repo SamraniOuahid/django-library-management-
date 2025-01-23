@@ -51,14 +51,28 @@
             {% if book.status == 'rental' %}
             <p class="totalprice">{{book.total_rental}}</p>
             {% endif %}                
-            {% endif %}
-              
-
-             
-          
-              
-              
+            {% endif %}             
             {% endfor %}
+            
+
+            <!-- الكتب المستعارة -->
+            {% for book in book %}
+            {% if book.total_rental != None %}              
+            {% if book.status == 'rental' %}
+            <p class="totalrental">{{book.total_rental}}</p>
+            {% endif %}                
+            {% endif %}            
+            {% endfor %}
+            <p class="salaryrental"></p> <hr> <br>
+            <!-- الكتب المباعة  -->
+            {% for book in book %}
+            {% if book.price != None %}           
+            {% if book.status == 'sold' %}              
+            <p class="totalsold">{{book.price}}</p>             
+            {% endif %}              
+            {% endif %}            
+            {% endfor %}
+            <p class="salarysold"></p>
               
             <div class="col-lg-6">
               <div class="card">
