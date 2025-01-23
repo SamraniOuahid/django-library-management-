@@ -30,12 +30,22 @@ def index(request):
 
 # veiw of book
 def books(request):
+    search = Book.objects.all()
+    title = None
+    if 'search_name' in request.GET:
+        title = request.GET['search_name']
+        if title:
+            search = search.filter(title__icontains = title)
+        else:
+            print('not found book')
+
+
     if request.method == 'POST':
         add_category = CategoryForm(request.POST, request.FILES)
         if add_category.is_valid():
             add_category.save()
     context = {
-        'book': Book.objects.all(),
+        'book': search,
         'category': Category.objects.all(),
         'formscat': CategoryForm(),
     }
