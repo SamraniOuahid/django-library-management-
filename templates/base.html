@@ -26,7 +26,9 @@
 {% include 'parts/sidebar.html' %}
 
 {% block content %}
-  
+<script>
+ 
+</script>
 {% endblock  %}
 {% include 'parts/footer.html' %}
 </div>
@@ -105,6 +107,19 @@ $('#catinput').hide()
 
 </script>
 
+
+{% for book in book %}
+<script>
+$('.cat{{book.category.id}}').click(function(){
+  $('.bookhide').hide()
+  $('.book{{book.category.id}}').show()
+})
+$('.status{{book.status}}').click(function(){
+  $('.bookhide').hide()
+  $('.book{{book.status}}').show()
+})
+</script> 
+{% endfor %}
   
   
 

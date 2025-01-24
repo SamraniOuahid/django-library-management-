@@ -151,9 +151,7 @@
                 </li>
                 {% endfor %}
                   
-                <li class="nav-item ">
-                  <a id="" class="nav-link bg-primary" href="#">تاريخ</a>
-                </li>
+                
                 
               </ul>
             </div>
@@ -167,7 +165,7 @@
           {% for x in book %}
           
             <!-- الكتب -->
-            <div id="" class="col-md-4 bookhide book{{x.category.id}}">
+            <div id="" class="col-md-4 bookhide book{{x.category.id}} book{{x.status}}">
               <!-- Widget: user widget style 1 -->
             <div id="" class="card card-widget widget-user ">
               <!-- Add the bg color to the header using any of the bg-* classes -->
