@@ -20,7 +20,7 @@ def index(request):
         'category': Category.objects.all(),
         'forms': BookForm(),
         'formscat': CategoryForm(),
-        'allbooks': Book.objects.filter(active=True).count(),
+        'allbooks': Book.objects.count(),
         'booksold': Book.objects.filter(status='sold').count(),
         'bookrental': Book.objects.filter(status='rental').count(),
         'bookavailable': Book.objects.filter(status='available').count(),
