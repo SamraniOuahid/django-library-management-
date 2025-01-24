@@ -51,10 +51,10 @@
                     </div>
                     <div class="card-footer">
                       <div class="text-right">
-                        <a href="#" class="btn btn-sm bg-danger">
+                        <a href="{% url 'delete' b.id %}" class="btn btn-sm bg-danger">
                           <i class="fas fa-trash"></i>
                         </a>
-                        <a href="#" class="btn btn-sm btn-primary">
+                        <a href="{% url 'update' b.id %}" class="btn btn-sm btn-primary">
                           <i class="fas fa-book"></i> تعديل
                         </a>
                       </div>
